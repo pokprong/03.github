@@ -18,6 +18,10 @@
 
   <style>
 
+    /* =========================================
+       RESET
+    ========================================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -36,6 +40,7 @@
       min-height: 100vh;
     }
 
+
     /* =========================================
        BACKGROUND
     ========================================= */
@@ -51,6 +56,7 @@
       top: -150px;
       left: -150px;
       z-index: -1;
+      pointer-events: none;
     }
 
     body::after {
@@ -64,7 +70,9 @@
       right: -150px;
       bottom: -150px;
       z-index: -1;
+      pointer-events: none;
     }
+
 
     /* =========================================
        NAVBAR
@@ -76,12 +84,17 @@
       left: 0;
       width: 100%;
       padding: 18px 8%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       background: rgba(7, 7, 10, 0.78);
       backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+
       z-index: 1000;
     }
 
@@ -114,17 +127,25 @@
       color: #8b5cff;
     }
 
+
     /* =========================================
        PAGE SYSTEM
     ========================================= */
 
     .page {
       display: none;
+
       min-height: 100vh;
-      padding: 140px 9% 90px;
+
+      padding:
+        140px 9% 90px;
+
       max-width: 1250px;
+
       margin: auto;
-      animation: pageIn 0.35s ease;
+
+      animation:
+        pageIn 0.35s ease;
     }
 
     .page.active {
@@ -134,6 +155,7 @@
     }
 
     @keyframes pageIn {
+
       from {
         opacity: 0;
         transform: translateY(15px);
@@ -143,7 +165,9 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
+
 
     /* =========================================
        HOME
@@ -157,10 +181,17 @@
     .profile {
       width: 190px;
       height: 190px;
+
       border-radius: 50%;
+
       object-fit: cover;
-      border: 4px solid #8b5cff;
-      box-shadow: 0 0 40px rgba(139,92,255,0.5);
+
+      border:
+        4px solid #8b5cff;
+
+      box-shadow:
+        0 0 40px rgba(139,92,255,0.5);
+
       margin-bottom: 30px;
     }
 
@@ -172,7 +203,9 @@
     }
 
     h1 {
-      font-size: clamp(45px, 8vw, 85px);
+      font-size:
+        clamp(45px, 8vw, 85px);
+
       line-height: 1;
       margin-bottom: 20px;
     }
@@ -190,24 +223,37 @@
 
     .button {
       display: inline-block;
+
       margin-top: 35px;
+
       padding: 13px 30px;
+
       border-radius: 30px;
-      background: linear-gradient(
-        135deg,
-        #8b5cff,
-        #5c35d6
-      );
+
+      background:
+        linear-gradient(
+          135deg,
+          #8b5cff,
+          #5c35d6
+        );
+
       color: white;
+
       text-decoration: none;
-      box-shadow: 0 10px 30px rgba(139,92,255,0.3);
+
+      box-shadow:
+        0 10px 30px rgba(139,92,255,0.3);
+
       transition: 0.3s;
     }
 
     .button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(139,92,255,0.5);
+
+      box-shadow:
+        0 15px 40px rgba(139,92,255,0.5);
     }
+
 
     /* =========================================
        SECTION TITLE
@@ -227,22 +273,33 @@
       margin-top: 5px;
     }
 
+
     /* =========================================
        CARD
     ========================================= */
 
     .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        rgba(255,255,255,0.04);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
       border-radius: 20px;
+
       padding: 35px;
+
       transition: 0.4s;
     }
 
     .card:hover {
       transform: translateY(-5px);
+
       border-color: #8b5cff;
-      box-shadow: 0 15px 40px rgba(139,92,255,0.15);
+
+      box-shadow:
+        0 15px 40px
+        rgba(139,92,255,0.15);
     }
 
     .card h3 {
@@ -259,33 +316,93 @@
       color: #8b5cff;
     }
 
+
     /* =========================================
        ABOUT
     ========================================= */
 
     .info {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 15px;
     }
 
     .info-box {
       padding: 22px;
-      border-left: 3px solid #8b5cff;
-      background: rgba(255,255,255,0.035);
+
+      border-left:
+        3px solid #8b5cff;
+
+      background:
+        rgba(255,255,255,0.035);
+
       transition: 0.3s;
     }
 
     .info-box:hover {
       transform: translateX(5px);
-      background: rgba(139,92,255,0.08);
+
+      background:
+        rgba(139,92,255,0.08);
     }
 
     .info-box strong {
       display: block;
+
       color: #8b5cff;
+
       margin-bottom: 5px;
     }
+
+
+    /* =========================================
+       SCHOOL LOGO
+    ========================================= */
+
+    .school-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .school-logo {
+      width: 75px;
+      height: 75px;
+
+      object-fit: contain;
+
+      flex-shrink: 0;
+
+      background: rgba(255,255,255,0.04);
+
+      border-radius: 15px;
+
+      padding: 8px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      transition: 0.3s;
+    }
+
+    .school-item:hover .school-logo {
+      border-color: #8b5cff;
+
+      box-shadow:
+        0 0 20px rgba(139,92,255,0.25);
+    }
+
+    .school-text strong {
+      display: block;
+
+      color: #8b5cff;
+
+      margin-bottom: 4px;
+    }
+
 
     /* =========================================
        EDUCATION
@@ -293,138 +410,164 @@
 
     .timeline {
       position: relative;
-      max-width: 950px;
+      max-width: 900px;
     }
 
     .timeline::before {
       content: "";
+
       position: absolute;
-      left: 29px;
+
+      left: 15px;
+
       top: 0;
       bottom: 0;
+
       width: 2px;
+
       background: #8b5cff;
     }
 
     .timeline-item {
       position: relative;
-      padding-left: 85px;
+
+      padding-left: 55px;
+
       margin-bottom: 45px;
-      min-height: 65px;
     }
 
     .timeline-item::before {
       content: "";
+
       position: absolute;
-      left: 22px;
-      top: 25px;
+
+      left: 8px;
+      top: 7px;
+
       width: 16px;
       height: 16px;
+
       background: #8b5cff;
+
       border-radius: 50%;
-      box-shadow: 0 0 15px #8b5cff;
-      z-index: 2;
-    }
-
-    /* กล่องโรงเรียน + โลโก้ */
-
-    .school-info {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-
-      padding: 18px 22px;
-
-      background: rgba(255,255,255,0.04);
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      border-radius: 18px;
-
-      transition: 0.3s;
-    }
-
-    .school-info:hover {
-      transform: translateX(5px);
-
-      border-color: #8b5cff;
-
-      background: rgba(139,92,255,0.07);
 
       box-shadow:
-        0 10px 30px rgba(139,92,255,0.12);
+        0 0 15px #8b5cff;
     }
 
-    /* โลโก้โรงเรียน */
-
-    .school-logo {
-      width: 70px;
-      height: 70px;
-
-      object-fit: contain;
-
-      flex-shrink: 0;
-
-      background: #fff;
-
-      border-radius: 12px;
-
-      padding: 7px;
-
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-
-    .school-text h3 {
+    .timeline-item h3 {
       font-size: 24px;
-      margin-bottom: 4px;
-    }
-
-    .school-text p {
-      color: #aaa;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    /* =========================================
-       UNIVERSITY
-    ========================================= */
-
-    .university-card {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      margin-bottom: 25px;
-    }
-
-    .university-logo {
-      width: 120px;
-      height: 120px;
-
-      object-fit: contain;
-
-      flex-shrink: 0;
-
-      background: #fff;
-
-      border-radius: 18px;
-
-      padding: 10px;
-
-      border: 1px solid rgba(255,255,255,0.12);
-
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .university-text h3 {
-      font-size: 28px;
       margin-bottom: 8px;
     }
 
-    .university-text p {
+    .timeline-item p {
       color: #aaa;
-      line-height: 1.8;
     }
+
+
+    /* =========================================
+       EDUCATION SCHOOL BOX
+    ========================================= */
+
+    .education-school {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .education-school img {
+      width: 60px;
+      height: 60px;
+
+      object-fit: contain;
+
+      padding: 5px;
+
+      background: rgba(255,255,255,0.04);
+
+      border-radius: 12px;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+
+    /* =========================================
+       SOP
+    ========================================= */
+
+    .sop-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .sop-card h3 {
+      color: #fff;
+
+      font-size: 30px;
+
+      margin-bottom: 25px;
+    }
+
+    .sop-card p {
+      color: #bbb;
+
+      font-size: 17px;
+
+      line-height: 2.1;
+
+      margin-bottom: 22px;
+
+      text-align: justify;
+    }
+
+    .sop-highlight {
+      margin-top: 35px;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(139,92,255,0.15),
+          rgba(0,217,255,0.06)
+        );
+
+      border:
+        1px solid rgba(139,92,255,0.35);
+
+      text-align: center;
+    }
+
+    .sop-highlight span {
+      display: block;
+
+      color: #8b5cff;
+
+      font-size: 13px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 8px;
+    }
+
+    .sop-highlight strong {
+      font-size: 24px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #8b5cff,
+          #00d9ff
+        );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
 
     /* =========================================
        ACTIVITY
@@ -432,6 +575,7 @@
 
     .activity {
       width: 100%;
+
       padding: 35px;
 
       background:
@@ -457,19 +601,25 @@
       line-height: 2;
     }
 
+
     /* =========================================
        ACTIVITY IMAGES
     ========================================= */
 
     .activity-images {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 25px;
+
       margin-bottom: 30px;
     }
 
     .image-box {
-      background: rgba(0,0,0,0.25);
+      background:
+        rgba(0,0,0,0.25);
 
       border:
         1px solid rgba(255,255,255,0.1);
@@ -487,15 +637,20 @@
       border-color: #8b5cff;
 
       box-shadow:
-        0 15px 40px rgba(139,92,255,0.2);
+        0 15px 40px
+        rgba(139,92,255,0.2);
 
-      transform: translateY(-5px);
+      transform:
+        translateY(-5px);
     }
 
     .image-box h4 {
       color: #8b5cff;
+
       font-size: 18px;
+
       margin-bottom: 12px;
+
       text-align: center;
     }
 
@@ -523,6 +678,109 @@
       transform: scale(1.02);
     }
 
+
+    /* =========================================
+       UNIVERSITY
+    ========================================= */
+
+    .university-box {
+      display: flex;
+
+      align-items: center;
+
+      gap: 25px;
+
+      margin-bottom: 25px;
+
+      padding: 20px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .university-logo {
+      width: 100px;
+      height: 100px;
+
+      object-fit: contain;
+
+      flex-shrink: 0;
+
+      padding: 10px;
+
+      background: #fff;
+
+      border-radius: 18px;
+    }
+
+    .university-box h3 {
+      margin-bottom: 5px;
+    }
+
+    .university-box p {
+      color: #aaa;
+    }
+
+
+    /* =========================================
+       SKILLS
+    ========================================= */
+
+    .skills {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .skill {
+      padding: 30px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform:
+        translateY(-8px);
+
+      border-color: #8b5cff;
+
+      box-shadow:
+        0 15px 40px
+        rgba(139,92,255,0.15);
+    }
+
+    .skill-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .skill h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .skill p {
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+
     /* =========================================
        LIGHTBOX
     ========================================= */
@@ -540,9 +798,11 @@
       width: 100%;
       height: 100%;
 
-      background: rgba(0,0,0,0.92);
+      background:
+        rgba(0,0,0,0.92);
 
       justify-content: center;
+
       align-items: center;
 
       padding: 30px;
@@ -561,7 +821,8 @@
       border-radius: 10px;
 
       box-shadow:
-        0 0 50px rgba(139,92,255,0.3);
+        0 0 50px
+        rgba(139,92,255,0.3);
     }
 
     .close-lightbox {
@@ -585,52 +846,6 @@
       color: #8b5cff;
     }
 
-    /* =========================================
-       SKILLS
-    ========================================= */
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .skill {
-      padding: 30px;
-
-      border-radius: 20px;
-
-      background: rgba(255,255,255,0.04);
-
-      border:
-        1px solid rgba(255,255,255,0.08);
-
-      transition: 0.3s;
-    }
-
-    .skill:hover {
-      transform: translateY(-8px);
-
-      border-color: #8b5cff;
-
-      box-shadow:
-        0 15px 40px rgba(139,92,255,0.15);
-    }
-
-    .skill-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .skill h3 {
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-
-    .skill p {
-      color: #aaa;
-      line-height: 1.7;
-    }
 
     /* =========================================
        FOOTER
@@ -646,6 +861,7 @@
       border-top:
         1px solid rgba(255,255,255,0.08);
     }
+
 
     /* =========================================
        MOBILE
@@ -668,7 +884,8 @@
       }
 
       .page {
-        padding: 120px 6% 70px;
+        padding:
+          120px 6% 70px;
       }
 
       .info,
@@ -702,56 +919,44 @@
       .activity-img,
       .certificate-img {
         height: auto;
+
         max-height: 500px;
+
         object-fit: contain;
       }
 
-      /* Education Mobile */
+      .sop-card p {
+        font-size: 15px;
 
-      .timeline::before {
-        left: 20px;
+        line-height: 1.9;
+
+        text-align: left;
       }
 
-      .timeline-item {
-        padding-left: 55px;
+      .sop-card h3 {
+        font-size: 23px;
       }
 
-      .timeline-item::before {
-        left: 13px;
+      .sop-highlight strong {
+        font-size: 18px;
       }
 
-      .school-info {
-        gap: 14px;
+      .university-box {
+        align-items: flex-start;
+
+        gap: 15px;
+
         padding: 15px;
       }
 
-      .school-logo {
-        width: 55px;
-        height: 55px;
-      }
-
-      .school-text h3 {
-        font-size: 19px;
-      }
-
-      .school-text p {
-        font-size: 14px;
-      }
-
-      /* University Mobile */
-
-      .university-card {
-        flex-direction: column;
-        text-align: center;
-      }
-
       .university-logo {
-        width: 110px;
-        height: 110px;
+        width: 75px;
+        height: 75px;
       }
 
-      .university-text h3 {
-        font-size: 23px;
+      .school-logo {
+        width: 60px;
+        height: 60px;
       }
 
       .lightbox {
@@ -768,6 +973,7 @@
         right: 20px;
         font-size: 38px;
       }
+
     }
 
   </style>
@@ -788,6 +994,7 @@
     PO<span>.</span>
   </div>
 
+
   <ul>
 
     <li>
@@ -805,6 +1012,12 @@
     <li>
       <a href="#preface" data-page="preface">
         คำนำ
+      </a>
+    </li>
+
+    <li>
+      <a href="#sop" data-page="sop">
+        SOP
       </a>
     </li>
 
@@ -837,6 +1050,7 @@
 </nav>
 
 
+
 <!-- =========================================
      HOME
 ========================================= -->
@@ -849,14 +1063,22 @@
     class="profile"
   >
 
+
   <div class="tag">
     PORTFOLIO 2026
   </div>
 
+
   <h1>
+
     นายปกป้อง<br>
-    <span>พงษ์เผ่าพงษ์</span>
+
+    <span>
+      พงษ์เผ่าพงษ์
+    </span>
+
   </h1>
+
 
   <p class="subtitle">
 
@@ -869,15 +1091,19 @@
 
   </p>
 
+
   <a
     href="#about"
     data-page="about"
     class="button"
   >
+
     เข้าสู่ Portfolio →
+
   </a>
 
 </section>
+
 
 
 <!-- =========================================
@@ -902,38 +1128,74 @@
   <div class="info">
 
     <div class="info-box">
-      <strong>ชื่อ</strong>
+
+      <strong>
+        ชื่อ
+      </strong>
+
       นายปกป้อง พงษ์เผ่าพงษ์
+
     </div>
 
+
     <div class="info-box">
-      <strong>ชื่อเล่น</strong>
+
+      <strong>
+        ชื่อเล่น
+      </strong>
+
       ปอ
+
     </div>
 
+
     <div class="info-box">
-      <strong>วัน / เดือน / ปีเกิด</strong>
+
+      <strong>
+        วัน / เดือน / ปีเกิด
+      </strong>
+
       2 / 12 / 2551
+
     </div>
 
+
     <div class="info-box">
-      <strong>หมู่เลือด</strong>
+
+      <strong>
+        หมู่เลือด
+      </strong>
+
       -
+
     </div>
 
+
     <div class="info-box">
-      <strong>สัญชาติ</strong>
+
+      <strong>
+        สัญชาติ
+      </strong>
+
       ไทย
+
     </div>
 
+
     <div class="info-box">
-      <strong>งานอดิเรก</strong>
+
+      <strong>
+        งานอดิเรก
+      </strong>
+
       ดูการ์ตูน • อ่านการ์ตูน • เล่นเกม
+
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================================
@@ -967,7 +1229,9 @@
 
     </p>
 
+
     <br>
+
 
     <p>
 
@@ -984,7 +1248,9 @@
 
     </p>
 
+
     <br>
+
 
     <p>
 
@@ -1000,6 +1266,121 @@
 </section>
 
 
+
+<!-- =========================================
+     SOP
+========================================= -->
+
+<section id="sop" class="page">
+
+  <div class="section-title">
+
+    <small>
+      03 — STATEMENT OF PURPOSE
+    </small>
+
+    <h2>
+      SOP
+    </h2>
+
+  </div>
+
+
+  <div class="card sop-card">
+
+    <h3>
+      เหตุผลและแรงบันดาลใจในการศึกษาต่อ
+    </h3>
+
+
+    <p>
+
+      ข้าพเจ้ามีความสนใจในด้านคอมพิวเตอร์และเทคโนโลยี
+      เนื่องจากเป็นศาสตร์ที่มีบทบาทสำคัญต่อการดำเนินชีวิต
+      และการพัฒนาสังคมในปัจจุบัน ข้าพเจ้าสนใจการทำงาน
+      ของคอมพิวเตอร์ การเขียนโปรแกรม และการสร้างสิ่งต่าง ๆ
+      ที่สามารถนำเทคโนโลยีมาใช้เพื่อแก้ไขปัญหา
+      และสร้างประโยชน์ให้กับผู้อื่น
+
+    </p>
+
+
+    <p>
+
+      ในช่วงมัธยมศึกษาตอนปลาย ข้าพเจ้าได้เลือกเรียน
+      สายวิทยาศาสตร์–คณิตศาสตร์ (เตรียมวิศวะคอมพิวเตอร์)
+      ซึ่งช่วยให้ข้าพเจ้าได้พัฒนาทักษะด้านการคิดวิเคราะห์
+      การแก้ปัญหา และการเรียนรู้ทางด้านวิทยาศาสตร์
+      และคณิตศาสตร์ อันเป็นพื้นฐานสำคัญสำหรับการศึกษา
+      ด้านวิศวกรรมคอมพิวเตอร์
+
+    </p>
+
+
+    <p>
+
+      นอกจากนี้ ข้าพเจ้ายังมีโอกาสเข้าร่วม
+
+      <strong class="purple">
+        ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5
+      </strong>
+
+      ณ โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+      ประสบการณ์จากกิจกรรมครั้งนี้ทำให้ข้าพเจ้าได้เรียนรู้
+      เกี่ยวกับนวัตกรรมและเทคโนโลยี รวมถึงได้ฝึกการทำงานเป็นทีม
+      การแลกเปลี่ยนความคิดเห็น และการแก้ไขปัญหาอย่างเป็นระบบ
+      ซึ่งทำให้ข้าพเจ้ามีความมั่นใจมากขึ้นว่าตนเองมีความสนใจ
+      และต้องการพัฒนาตนเองในสายด้านคอมพิวเตอร์อย่างจริงจัง
+
+    </p>
+
+
+    <p>
+
+      ข้าพเจ้าจึงมีความตั้งใจที่จะศึกษาต่อใน
+
+      <strong class="purple">
+        คณะวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเกษตรศาสตร์
+      </strong>
+
+      เพราะต้องการศึกษาความรู้เกี่ยวกับคอมพิวเตอร์
+      การเขียนโปรแกรม การออกแบบและพัฒนาระบบ
+      รวมถึงเทคโนโลยีต่าง ๆ ที่สามารถนำไปประยุกต์ใช้
+      ในการแก้ไขปัญหาในชีวิตจริง
+
+    </p>
+
+
+    <p>
+
+      ในอนาคต ข้าพเจ้าตั้งใจที่จะพัฒนาความรู้
+      และทักษะด้านคอมพิวเตอร์อย่างต่อเนื่อง
+      พร้อมทั้งเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ
+      เพื่อเตรียมความพร้อมสำหรับการทำงานในสายอาชีพ
+      ด้านเทคโนโลยี และนำความรู้ที่ได้รับไปสร้างสรรค์
+      ผลงานหรือนวัตกรรมที่เป็นประโยชน์ต่อสังคมต่อไป
+
+    </p>
+
+
+    <div class="sop-highlight">
+
+      <span>
+        MY PASSION
+      </span>
+
+      <strong>
+        Computer • Technology • Innovation
+      </strong>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- =========================================
      EDUCATION
 ========================================= -->
@@ -1009,7 +1390,7 @@
   <div class="section-title">
 
     <small>
-      03 — EDUCATION
+      04 — EDUCATION
     </small>
 
     <h2>
@@ -1026,15 +1407,14 @@
 
     <div class="timeline-item">
 
-      <div class="school-info">
+      <div class="education-school">
 
         <img
           src="bankaodin.png"
           alt="โลโก้โรงเรียนบ้านเขาดิน"
-          class="school-logo"
         >
 
-        <div class="school-text">
+        <div>
 
           <h3>
             ระดับอนุบาล
@@ -1055,15 +1435,14 @@
 
     <div class="timeline-item">
 
-      <div class="school-info">
+      <div class="education-school">
 
         <img
           src="bankaodin.png"
           alt="โลโก้โรงเรียนบ้านเขาดิน"
-          class="school-logo"
         >
 
-        <div class="school-text">
+        <div>
 
           <h3>
             ระดับประถมศึกษา
@@ -1084,15 +1463,14 @@
 
     <div class="timeline-item">
 
-      <div class="school-info">
+      <div class="education-school">
 
         <img
           src="banbung.png"
-          alt="โลโก้โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์"
-          class="school-logo"
+          alt="โลโก้โรงเรียนบ้านบึง"
         >
 
-        <div class="school-text">
+        <div>
 
           <h3>
             ระดับมัธยมศึกษาตอนต้น
@@ -1113,15 +1491,14 @@
 
     <div class="timeline-item">
 
-      <div class="school-info">
+      <div class="education-school">
 
         <img
           src="banbung.png"
-          alt="โลโก้โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์"
-          class="school-logo"
+          alt="โลโก้โรงเรียนบ้านบึง"
         >
 
-        <div class="school-text">
+        <div>
 
           <h3>
             ระดับมัธยมศึกษาตอนปลาย
@@ -1143,6 +1520,7 @@
 </section>
 
 
+
 <!-- =========================================
      ACTIVITY
 ========================================= -->
@@ -1152,7 +1530,7 @@
   <div class="section-title">
 
     <small>
-      04 — ACTIVITY
+      05 — ACTIVITY
     </small>
 
     <h2>
@@ -1164,6 +1542,8 @@
 
   <div class="activity">
 
+
+    <!-- รูปสองรูปอยู่ข้างกัน -->
 
     <div class="activity-images">
 
@@ -1195,7 +1575,7 @@
         </h4>
 
         <img
-          src="buud.jpg"
+          src="buud.png"
           alt="เกียรติบัตรค่ายพัฒนานวัตกรรมและเทคโนโลยี"
           class="certificate-img"
           onclick="openLightbox(this.src)"
@@ -1229,10 +1609,10 @@
 
     </p>
 
-
   </div>
 
 </section>
+
 
 
 <!-- =========================================
@@ -1244,7 +1624,7 @@
   <div class="section-title">
 
     <small>
-      05 — MY GOAL
+      06 — MY GOAL
     </small>
 
     <h2>
@@ -1257,7 +1637,9 @@
   <div class="card">
 
 
-    <div class="university-card">
+    <!-- LOGO มหาวิทยาลัย -->
+
+    <div class="university-box">
 
       <img
         src="kasetsart.png"
@@ -1265,11 +1647,10 @@
         class="university-logo"
       >
 
-
-      <div class="university-text">
+      <div>
 
         <h3>
-           คณะวิศวกรรมคอมพิวเตอร์
+          💻 คณะวิศวกรรมคอมพิวเตอร์
         </h3>
 
         <p>
@@ -1295,6 +1676,7 @@
 </section>
 
 
+
 <!-- =========================================
      SKILLS
 ========================================= -->
@@ -1304,7 +1686,7 @@
   <div class="section-title">
 
     <small>
-      06 — SKILLS
+      07 — SKILLS
     </small>
 
     <h2>
@@ -1362,6 +1744,7 @@
 </section>
 
 
+
 <!-- =========================================
      FOOTER
 ========================================= -->
@@ -1373,6 +1756,7 @@
   </p>
 
 </footer>
+
 
 
 <!-- =========================================
@@ -1403,6 +1787,7 @@
 </div>
 
 
+
 <!-- =========================================
      JAVASCRIPT
 ========================================= -->
@@ -1422,32 +1807,47 @@
 
   function showPage(pageId) {
 
+    /* ซ่อนทุกหน้า */
+
     pages.forEach(page => {
+
       page.classList.remove("active");
+
     });
 
+
+    /* แสดงหน้าที่เลือก */
 
     const target =
       document.getElementById(pageId);
 
 
     if (target) {
+
       target.classList.add("active");
+
     }
 
+
+    /* เปลี่ยนเมนู active */
 
     links.forEach(link => {
 
       link.classList.remove("active");
 
+
       if (
         link.dataset.page === pageId
       ) {
+
         link.classList.add("active");
+
       }
 
     });
 
+
+    /* กลับด้านบน */
 
     window.scrollTo({
       top: 0,
@@ -1463,15 +1863,23 @@
       window.location.hash.substring(1);
 
 
+    /* ถ้าไม่มี # ให้เปิดหน้าแรก */
+
     if (!pageId) {
+
       pageId = "home";
+
     }
 
+
+    /* ถ้า URL ผิด ให้กลับหน้าแรก */
 
     if (
       !document.getElementById(pageId)
     ) {
+
       pageId = "home";
+
     }
 
 
@@ -1479,6 +1887,8 @@
 
   }
 
+
+  /* กดเมนู */
 
   links.forEach(link => {
 
@@ -1500,13 +1910,18 @@
   });
 
 
+  /* เมื่อ URL เปลี่ยน */
+
   window.addEventListener(
     "hashchange",
     loadPage
   );
 
 
+  /* โหลดหน้า */
+
   loadPage();
+
 
 
   /* =========================================
@@ -1546,12 +1961,16 @@
   }
 
 
+  /* กด ESC เพื่อปิดรูป */
+
   document.addEventListener(
     "keydown",
     function(e) {
 
       if (e.key === "Escape") {
+
         closeLightbox();
+
       }
 
     }
