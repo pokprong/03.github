@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      min-height: 100%;
     }
 
     body {
@@ -25,7 +34,10 @@
       overflow-x: hidden;
     }
 
-    /* Background */
+    /* =========================
+       BACKGROUND
+    ========================= */
+
     body::before {
       content: "";
       position: fixed;
@@ -52,19 +64,27 @@
       z-index: -1;
     }
 
-    /* Navigation */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+
       padding: 18px 8%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(7, 7, 10, 0.75);
+
+      background: rgba(7, 7, 10, 0.78);
       backdrop-filter: blur(15px);
+
       border-bottom: 1px solid rgba(255,255,255,0.08);
+
       z-index: 1000;
     }
 
@@ -81,29 +101,64 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 28px;
+      gap: 25px;
     }
 
     nav a {
-      color: #bbb;
+      color: #aaa;
       text-decoration: none;
       transition: 0.3s;
+      cursor: pointer;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #fff;
     }
 
-    /* Sections */
-    section {
+    nav a.active {
+      color: #8b5cff;
+    }
+
+    /* =========================
+       PAGE SYSTEM
+    ========================= */
+
+    .page {
+      display: none;
       min-height: 100vh;
-      padding: 120px 9% 80px;
+      padding: 140px 9% 90px;
+
+      max-width: 1250px;
+      margin: auto;
+
+      animation: pageIn 0.35s ease;
+    }
+
+    .page.active {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    /* Cover */
+    @keyframes pageIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    /* =========================
+       HOME
+    ========================= */
+
     #home {
       text-align: center;
       align-items: center;
@@ -112,10 +167,15 @@
     .profile {
       width: 190px;
       height: 190px;
+
       border-radius: 50%;
       object-fit: cover;
+
       border: 4px solid #8b5cff;
-      box-shadow: 0 0 40px rgba(139,92,255,0.5);
+
+      box-shadow:
+        0 0 40px rgba(139,92,255,0.5);
+
       margin-bottom: 30px;
     }
 
@@ -143,22 +203,40 @@
       line-height: 1.8;
     }
 
-    .scroll {
-      margin-top: 45px;
-      color: #777;
-      animation: bounce 1.5s infinite;
+    .button {
+      display: inline-block;
+
+      margin-top: 35px;
+      padding: 13px 30px;
+
+      border-radius: 30px;
+
+      background: linear-gradient(
+        135deg,
+        #8b5cff,
+        #5c35d6
+      );
+
+      color: white;
+      text-decoration: none;
+
+      box-shadow:
+        0 10px 30px rgba(139,92,255,0.3);
+
+      transition: 0.3s;
     }
 
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(10px);
-      }
+    .button:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 40px rgba(139,92,255,0.5);
     }
 
-    /* Heading */
+    /* =========================
+       SECTION TITLE
+    ========================= */
+
     .section-title {
       margin-bottom: 45px;
     }
@@ -173,57 +251,89 @@
       margin-top: 5px;
     }
 
-    /* Cards */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
+    /* =========================
+       CARD
+    ========================= */
 
     .card {
       background: rgba(255,255,255,0.04);
+
       border: 1px solid rgba(255,255,255,0.08);
+
       border-radius: 20px;
-      padding: 30px;
+
+      padding: 35px;
+
       transition: 0.4s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
+
       border-color: #8b5cff;
-      box-shadow: 0 15px 40px rgba(139,92,255,0.15);
+
+      box-shadow:
+        0 15px 40px rgba(139,92,255,0.15);
     }
 
     .card h3 {
-      font-size: 24px;
+      font-size: 28px;
       margin-bottom: 12px;
     }
 
     .card p {
       color: #aaa;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
-    /* Personal Info */
+    .purple {
+      color: #8b5cff;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
     .info {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 15px;
     }
 
     .info-box {
-      padding: 20px;
-      border-left: 3px solid #8b5cff;
-      background: rgba(255,255,255,0.035);
+      padding: 22px;
+
+      border-left:
+        3px solid #8b5cff;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      transition: 0.3s;
+    }
+
+    .info-box:hover {
+      transform: translateX(5px);
+
+      background:
+        rgba(139,92,255,0.08);
     }
 
     .info-box strong {
       display: block;
+
       color: #8b5cff;
+
       margin-bottom: 5px;
     }
 
-    /* Education */
+    /* =========================
+       EDUCATION
+    ========================= */
+
     .timeline {
       position: relative;
       max-width: 900px;
@@ -231,60 +341,86 @@
 
     .timeline::before {
       content: "";
+
       position: absolute;
+
       left: 15px;
       top: 0;
       bottom: 0;
+
       width: 2px;
+
       background: #8b5cff;
     }
 
     .timeline-item {
       position: relative;
+
       padding-left: 55px;
-      margin-bottom: 35px;
+
+      margin-bottom: 45px;
     }
 
     .timeline-item::before {
       content: "";
+
       position: absolute;
+
       left: 8px;
       top: 7px;
+
       width: 16px;
       height: 16px;
+
       background: #8b5cff;
+
       border-radius: 50%;
-      box-shadow: 0 0 15px #8b5cff;
+
+      box-shadow:
+        0 0 15px #8b5cff;
     }
 
     .timeline-item h3 {
-      font-size: 22px;
+      font-size: 24px;
+      margin-bottom: 5px;
     }
 
     .timeline-item p {
       color: #aaa;
     }
 
-    /* Activity */
+    /* =========================
+       ACTIVITY
+    ========================= */
+
     .activity {
-      max-width: 850px;
-      padding: 40px;
-      background: linear-gradient(
-        135deg,
-        rgba(139,92,255,0.12),
-        rgba(0,217,255,0.05)
-      );
-      border: 1px solid rgba(139,92,255,0.3);
+      max-width: 900px;
+
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(139,92,255,0.12),
+          rgba(0,217,255,0.05)
+        );
+
+      border:
+        1px solid rgba(139,92,255,0.3);
+
       border-radius: 25px;
     }
 
-    /* เพิ่มสไตล์รูปภาพกิจกรรมที่ขาดไป */
     .activity-img {
       width: 100%;
-      max-height: 400px;
+
+      max-height: 450px;
+
       object-fit: cover;
+
       border-radius: 15px;
-      margin-bottom: 20px;
+
+      margin-bottom: 25px;
     }
 
     .activity h3 {
@@ -297,24 +433,40 @@
       line-height: 2;
     }
 
-    /* Skills */
+    /* =========================
+       SKILLS
+    ========================= */
+
     .skills {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 25px;
     }
 
     .skill {
       padding: 30px;
+
       border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
       transition: 0.3s;
     }
 
     .skill:hover {
-      transform: scale(1.02);
+      transform: translateY(-8px);
+
       border-color: #8b5cff;
+
+      box-shadow:
+        0 15px 40px rgba(139,92,255,0.15);
     }
 
     .skill-icon {
@@ -324,6 +476,7 @@
 
     .skill h3 {
       margin-bottom: 10px;
+      font-size: 24px;
     }
 
     .skill p {
@@ -331,15 +484,25 @@
       line-height: 1.7;
     }
 
-    /* Footer */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       text-align: center;
+
       padding: 40px;
+
       color: #666;
-      border-top: 1px solid rgba(255,255,255,0.08);
+
+      border-top:
+        1px solid rgba(255,255,255,0.08);
     }
 
-    /* Mobile */
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 768px) {
 
       nav {
@@ -347,15 +510,20 @@
       }
 
       nav ul {
-        gap: 12px;
-        font-size: 12px;
+        gap: 10px;
+
+        font-size: 11px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
       }
 
-      section {
-        padding: 110px 6% 70px;
+      .page {
+        padding:
+          120px 6% 70px;
       }
 
-      .card-grid,
       .info,
       .skills {
         grid-template-columns: 1fr;
@@ -370,284 +538,563 @@
         font-size: 35px;
       }
 
-      .activity {
+      .activity,
+      .card {
         padding: 25px;
       }
 
       h1 {
         font-size: 50px;
       }
+
+      .activity h3 {
+        font-size: 24px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">PO<span>.</span></div>
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <ul>
-      <li><a href="#home">หน้าแรก</a></li>
-      <li><a href="#about">ประวัติ</a></li>
-      <li><a href="#preface">คำนำ</a></li>
-      <li><a href="#education">การศึกษา</a></li>
-      <li><a href="#activity">กิจกรรม</a></li>
-      <li><a href="#future">เป้าหมาย</a></li>
-      <li><a href="#skills">ทักษะ</a></li>
-    </ul>
-  </nav>
+<nav>
+
+  <div class="logo">
+    PO<span>.</span>
+  </div>
+
+  <ul>
+
+    <li>
+      <a href="#home" data-page="home">
+        หน้าแรก
+      </a>
+    </li>
+
+    <li>
+      <a href="#about" data-page="about">
+        ประวัติ
+      </a>
+    </li>
+
+    <li>
+      <a href="#preface" data-page="preface">
+        คำนำ
+      </a>
+    </li>
+
+    <li>
+      <a href="#education" data-page="education">
+        การศึกษา
+      </a>
+    </li>
+
+    <li>
+      <a href="#activity" data-page="activity">
+        กิจกรรม
+      </a>
+    </li>
+
+    <li>
+      <a href="#future" data-page="future">
+        เป้าหมาย
+      </a>
+    </li>
+
+    <li>
+      <a href="#skills" data-page="skills">
+        ทักษะ
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
 
 
-  <!-- COVER -->
-  <section id="home">
+<!-- =========================
+     HOME
+========================= -->
 
-    <img src="profile.jpeg"
-         alt="รูปโปรไฟล์"
-         class="profile">
+<section id="home" class="page">
 
-    <div class="tag">PORTFOLIO 2026</div>
+  <img
+    src="profile.jpeg"
+    alt="รูปโปรไฟล์"
+    class="profile"
+  >
 
-    <h1>
-      นายปกป้อง<br>
-      <span>พงษ์เผ่าพงษ์</span>
-    </h1>
+  <div class="tag">
+    PORTFOLIO 2026
+  </div>
 
-    <p class="subtitle">
-      นักเรียนชั้นมัธยมศึกษาปีที่ 6<br>
-      สายการเรียน วิทยาศาสตร์–คณิตศาสตร์
-      (เตรียมวิศวะคอมพิวเตอร์)<br>
-      โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+  <h1>
+    นายปกป้อง<br>
+    <span>พงษ์เผ่าพงษ์</span>
+  </h1>
+
+  <p class="subtitle">
+    นักเรียนชั้นมัธยมศึกษาปีที่ 6<br>
+
+    สายการเรียน วิทยาศาสตร์–คณิตศาสตร์
+    (เตรียมวิศวะคอมพิวเตอร์)<br>
+
+    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+  </p>
+
+  <a
+    href="#about"
+    data-page="about"
+    class="button"
+  >
+    เข้าสู่ Portfolio →
+  </a>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about" class="page">
+
+  <div class="section-title">
+
+    <small>
+      01 — ABOUT ME
+    </small>
+
+    <h2>
+      ประวัติส่วนตัว
+    </h2>
+
+  </div>
+
+  <div class="info">
+
+    <div class="info-box">
+      <strong>ชื่อ</strong>
+      นายปกป้อง พงษ์เผ่าพงษ์
+    </div>
+
+    <div class="info-box">
+      <strong>ชื่อเล่น</strong>
+      ปอ
+    </div>
+
+    <div class="info-box">
+      <strong>วัน / เดือน / ปีเกิด</strong>
+      2 / 12 / 2551
+    </div>
+
+    <div class="info-box">
+      <strong>หมู่เลือด</strong>
+      -
+    </div>
+
+    <div class="info-box">
+      <strong>สัญชาติ</strong>
+      ไทย
+    </div>
+
+    <div class="info-box">
+      <strong>งานอดิเรก</strong>
+      ดูการ์ตูน • อ่านการ์ตูน • เล่นเกม
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PREFACE
+========================= -->
+
+<section id="preface" class="page">
+
+  <div class="section-title">
+
+    <small>
+      02 — PREFACE
+    </small>
+
+    <h2>
+      คำนำ
+    </h2>
+
+  </div>
+
+  <div class="card">
+
+    <p>
+      แฟ้มสะสมผลงาน (Portfolio) เล่มนี้จัดทำขึ้นเพื่อรวบรวม
+      ประวัติส่วนตัว ประวัติการศึกษา กิจกรรมที่เข้าร่วม
+      ความสนใจ และทักษะต่าง ๆ ของข้าพเจ้า
+      เพื่อแสดงให้เห็นถึงความรู้ ความสามารถ ความสนใจ
+      และประสบการณ์ที่ได้สั่งสมมาตลอดช่วงเวลาของการศึกษา
     </p>
 
-    <div class="scroll">
-      ↓ SCROLL DOWN
-    </div>
+    <br>
 
-  </section>
+    <p>
+      ข้าพเจ้ามีความสนใจในด้าน
+      <strong class="purple">
+        คอมพิวเตอร์และเทคโนโลยี
+      </strong>
 
+      เนื่องจากคอมพิวเตอร์เป็นส่วนสำคัญในการพัฒนาสังคม
+      และการดำเนินชีวิตในปัจจุบัน อีกทั้งยังเป็นศาสตร์ที่เปิดโอกาส
+      ให้เราได้คิดสร้างสรรค์สิ่งใหม่ ๆ แก้ไขปัญหา
+      และพัฒนานวัตกรรมที่สามารถนำไปใช้ประโยชน์ได้จริง
+    </p>
 
-  <!-- ABOUT -->
-  <section id="about">
+    <br>
 
-    <div class="section-title">
-      <small>01 — ABOUT ME</small>
-      <h2>ประวัติส่วนตัว</h2>
-    </div>
+    <p>
+      ข้าพเจ้าหวังว่าแฟ้มสะสมผลงานเล่มนี้จะสะท้อนให้เห็นถึง
+      ความตั้งใจ ความสนใจ และความมุ่งมั่นในการเรียนรู้ด้านคอมพิวเตอร์
+      รวมถึงเป็นส่วนหนึ่งที่แสดงถึงความพร้อมในการศึกษาต่อ
+      ในระดับอุดมศึกษาต่อไป
+    </p>
 
-    <div class="info">
+  </div>
 
-      <div class="info-box">
-        <strong>ชื่อ</strong>
-        นายปกป้อง พงษ์เผ่าพงษ์
-      </div>
-
-      <div class="info-box">
-        <strong>ชื่อเล่น</strong>
-        ปอ
-      </div>
-
-      <div class="info-box">
-        <strong>วัน / เดือน / ปีเกิด</strong>
-        2 / 12 / 2551
-      </div>
-
-      <div class="info-box">
-        <strong>หมู่เลือด</strong>
-        -
-      </div>
-
-      <div class="info-box">
-        <strong>สัญชาติ</strong>
-        ไทย
-      </div>
-
-      <div class="info-box">
-        <strong>งานอดิเรก</strong>
-        ดูการ์ตูน • อ่านการ์ตูน • เล่นเกม
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- PREFACE -->
-  <section id="preface">
+<!-- =========================
+     EDUCATION
+========================= -->
 
-    <div class="section-title">
-      <small>02 — PREFACE</small>
-      <h2>คำนำ</h2>
-    </div>
+<section id="education" class="page">
 
-    <div class="card">
-      <p>
-        แฟ้มสะสมผลงาน (Portfolio) เล่มนี้จัดทำขึ้นเพื่อรวบรวม
-        ประวัติส่วนตัว ประวัติการศึกษา กิจกรรมที่เข้าร่วม
-        ความสนใจ และทักษะต่าง ๆ ของข้าพเจ้า
-        เพื่อแสดงให้เห็นถึงความรู้ ความสามารถ ความสนใจ
-        และประสบการณ์ที่ได้สั่งสมมาตลอดช่วงเวลาของการศึกษา
-      </p>
+  <div class="section-title">
 
-      <br>
+    <small>
+      03 — EDUCATION
+    </small>
+
+    <h2>
+      ประวัติการศึกษา
+    </h2>
+
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <h3>
+        ระดับอนุบาล
+      </h3>
 
       <p>
-        ข้าพเจ้ามีความสนใจในด้าน
-        <strong style="color:#8b5cff;">คอมพิวเตอร์และเทคโนโลยี</strong>
-        เนื่องจากคอมพิวเตอร์เป็นส่วนสำคัญในการพัฒนาสังคม
-        และการดำเนินชีวิตในปัจจุบัน อีกทั้งยังเป็นศาสตร์ที่เปิดโอกาส
-        ให้เราได้คิดสร้างสรรค์สิ่งใหม่ ๆ แก้ไขปัญหา
-        และพัฒนานวัตกรรมที่สามารถนำไปใช้ประโยชน์ได้จริง
-      </p>
-
-      <br>
-
-      <p>
-        ข้าพเจ้าหวังว่าแฟ้มสะสมผลงานเล่มนี้จะสะท้อนให้เห็นถึง
-        ความตั้งใจ ความสนใจ และความมุ่งมั่นในการเรียนรู้ด้านคอมพิวเตอร์
-        รวมถึงเป็นส่วนหนึ่งที่แสดงถึงความพร้อมในการศึกษาต่อ
-        ในระดับอุดมศึกษาต่อไป
-      </p>
-    </div>
-
-  </section>
-
-
-  <!-- EDUCATION -->
-  <section id="education">
-
-    <div class="section-title">
-      <small>03 — EDUCATION</small>
-      <h2>ประวัติการศึกษา</h2>
-    </div>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <h3>ระดับอนุบาล</h3>
-        <p>โรงเรียนบ้านเขาดิน</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>ระดับประถมศึกษา</h3>
-        <p>โรงเรียนบ้านเขาดิน</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
-        <p>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
-        <p>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ACTIVITY -->
-  <section id="activity">
-
-    <div class="section-title">
-      <small>04 — ACTIVITY</small>
-      <h2>กิจกรรมที่เข้าร่วม</h2>
-    </div>
-
-    <div class="activity">
-      <img src="activity.jpeg"
-        alt="กิจกรรมค่ายพัฒนานวัตกรรมและเทคโนโลยี"
-        class="activity-img">
-
-      <h3>ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5</h3>
-
-      <p>
-        ณ โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
-      </p>
-
-      <br>
-
-      <p>
-        การเข้าร่วมโครงการค่ายพัฒนานวัตกรรมและเทคโนโลยี
-        เป็นประสบการณ์ที่ช่วยเปิดโอกาสให้ข้าพเจ้าได้เรียนรู้
-        เกี่ยวกับนวัตกรรมและเทคโนโลยี รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น
-        การแลกเปลี่ยนความคิดเห็น และการแก้ไขปัญหาอย่างเป็นระบบ
+        โรงเรียนบ้านเขาดิน
       </p>
 
     </div>
 
-  </section>
+    <div class="timeline-item">
 
-
-  <!-- FUTURE -->
-  <section id="future">
-
-    <div class="section-title">
-      <small>05 — MY GOAL</small>
-      <h2>ความสนใจศึกษาต่อ</h2>
-    </div>
-
-    <div class="card">
-
-      <h3>💻 คณะวิศวกรรมคอมพิวเตอร์</h3>
+      <h3>
+        ระดับประถมศึกษา
+      </h3>
 
       <p>
-        มหาวิทยาลัยเกษตรศาสตร์
-      </p>
-
-      <br>
-
-      <p>
-        ข้าพเจ้ามีความสนใจศึกษาต่อในคณะวิศวกรรมคอมพิวเตอร์
-        มหาวิทยาลัยเกษตรศาสตร์ เพราะเป็นสาขาที่เกี่ยวข้องกับ
-        คอมพิวเตอร์ เทคโนโลยี การเขียนโปรแกรม และการพัฒนาระบบต่าง ๆ
-        ซึ่งตรงกับความสนใจและเป้าหมายในการพัฒนาตนเองของข้าพเจ้า
+        โรงเรียนบ้านเขาดิน
       </p>
 
     </div>
 
-  </section>
+    <div class="timeline-item">
 
+      <h3>
+        ระดับมัธยมศึกษาตอนต้น
+      </h3>
 
-  <!-- SKILLS -->
-  <section id="skills">
-
-    <div class="section-title">
-      <small>06 — SKILLS</small>
-      <h2>ทักษะ</h2>
-    </div>
-
-    <div class="skills">
-
-      <div class="skill">
-        <div class="skill-icon">🤝</div>
-        <h3>การทำงานเป็นทีม</h3>
-        <p>
-          สามารถทำงานร่วมกับผู้อื่น รับฟังความคิดเห็น
-          และช่วยกันวางแผนเพื่อให้การทำงานบรรลุเป้าหมาย
-        </p>
-      </div>
-
-      <div class="skill">
-        <div class="skill-icon">🎤</div>
-        <h3>การกล้าแสดงออก</h3>
-        <p>
-          มีความกล้าที่จะแสดงความคิดเห็น นำเสนอความคิด
-          และมีส่วนร่วมในกิจกรรมต่าง ๆ
-        </p>
-      </div>
+      <p>
+        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+      </p>
 
     </div>
 
-  </section>
+    <div class="timeline-item">
+
+      <h3>
+        ระดับมัธยมศึกษาตอนปลาย
+      </h3>
+
+      <p>
+        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
-  </footer>
+<!-- =========================
+     ACTIVITY
+========================= -->
+
+<section id="activity" class="page">
+
+  <div class="section-title">
+
+    <small>
+      04 — ACTIVITY
+    </small>
+
+    <h2>
+      กิจกรรมที่เข้าร่วม
+    </h2>
+
+  </div>
+
+  <div class="activity">
+
+    <img
+      src="activity.jpeg"
+      alt="กิจกรรมค่ายพัฒนานวัตกรรมและเทคโนโลยี"
+      class="activity-img"
+    >
+
+    <h3>
+      ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5
+    </h3>
+
+    <p>
+      ณ โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+    </p>
+
+    <br>
+
+    <p>
+      การเข้าร่วมโครงการค่ายพัฒนานวัตกรรมและเทคโนโลยี
+      เป็นประสบการณ์ที่ช่วยเปิดโอกาสให้ข้าพเจ้าได้เรียนรู้
+      เกี่ยวกับนวัตกรรมและเทคโนโลยี รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น
+      การแลกเปลี่ยนความคิดเห็น และการแก้ไขปัญหาอย่างเป็นระบบ
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FUTURE
+========================= -->
+
+<section id="future" class="page">
+
+  <div class="section-title">
+
+    <small>
+      05 — MY GOAL
+    </small>
+
+    <h2>
+      ความสนใจศึกษาต่อ
+    </h2>
+
+  </div>
+
+  <div class="card">
+
+    <h3>
+      💻 คณะวิศวกรรมคอมพิวเตอร์
+    </h3>
+
+    <p>
+      มหาวิทยาลัยเกษตรศาสตร์
+    </p>
+
+    <br>
+
+    <p>
+      ข้าพเจ้ามีความสนใจศึกษาต่อในคณะวิศวกรรมคอมพิวเตอร์
+      มหาวิทยาลัยเกษตรศาสตร์ เพราะเป็นสาขาที่เกี่ยวข้องกับ
+      คอมพิวเตอร์ เทคโนโลยี การเขียนโปรแกรม และการพัฒนาระบบต่าง ๆ
+      ซึ่งตรงกับความสนใจและเป้าหมายในการพัฒนาตนเองของข้าพเจ้า
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills" class="page">
+
+  <div class="section-title">
+
+    <small>
+      06 — SKILLS
+    </small>
+
+    <h2>
+      ทักษะ
+    </h2>
+
+  </div>
+
+  <div class="skills">
+
+    <div class="skill">
+
+      <div class="skill-icon">
+        🤝
+      </div>
+
+      <h3>
+        การทำงานเป็นทีม
+      </h3>
+
+      <p>
+        สามารถทำงานร่วมกับผู้อื่น รับฟังความคิดเห็น
+        และช่วยกันวางแผนเพื่อให้การทำงานบรรลุเป้าหมาย
+      </p>
+
+    </div>
+
+    <div class="skill">
+
+      <div class="skill-icon">
+        🎤
+      </div>
+
+      <h3>
+        การกล้าแสดงออก
+      </h3>
+
+      <p>
+        มีความกล้าที่จะแสดงความคิดเห็น นำเสนอความคิด
+        และมีส่วนร่วมในกิจกรรมต่าง ๆ
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <p>
+    © 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  const pages = document.querySelectorAll(".page");
+  const links = document.querySelectorAll("nav a");
+
+  function showPage(pageId) {
+
+    // ซ่อนทุกหน้า
+    pages.forEach(page => {
+      page.classList.remove("active");
+    });
+
+    // แสดงหน้าที่เลือก
+    const target = document.getElementById(pageId);
+
+    if (target) {
+      target.classList.add("active");
+    }
+
+    // เปลี่ยนเมนู active
+    links.forEach(link => {
+
+      link.classList.remove("active");
+
+      if (link.dataset.page === pageId) {
+        link.classList.add("active");
+      }
+
+    });
+
+    // กลับขึ้นด้านบน
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+
+  }
+
+
+  function loadPage() {
+
+    let pageId =
+      window.location.hash.substring(1);
+
+    // ถ้าไม่มี # ให้เปิดหน้าแรก
+    if (!pageId) {
+      pageId = "home";
+    }
+
+    // ถ้า URL ผิด ให้กลับหน้าแรก
+    if (!document.getElementById(pageId)) {
+      pageId = "home";
+    }
+
+    showPage(pageId);
+  }
+
+
+  // เมื่อกดเมนู
+  links.forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      const pageId =
+        this.dataset.page;
+
+      window.location.hash =
+        pageId;
+
+    });
+
+  });
+
+
+  // เมื่อ URL เปลี่ยน
+  window.addEventListener(
+    "hashchange",
+    loadPage
+  );
+
+
+  // โหลดครั้งแรก
+  loadPage();
+
+</script>
 
 </body>
 </html>
