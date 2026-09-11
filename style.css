@@ -44,7 +44,7 @@ body::after {
   pointer-events: none;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav {
   position: fixed;
@@ -52,12 +52,16 @@ nav {
   left: 0;
   width: 100%;
   padding: 16px 6%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background: rgba(7, 7, 10, 0.82);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
   z-index: 1000;
 }
 
@@ -66,6 +70,10 @@ nav {
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
+}
+
+.logo span {
+  color: #8b5cff;
 }
 
 nav ul {
@@ -78,6 +86,7 @@ nav a {
   color: #aaa;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
   white-space: nowrap;
 }
 
@@ -86,16 +95,14 @@ nav a.active {
   color: #8b5cff;
 }
 
-/* PAGE */
+/* ================= PAGE ================= */
 
 .page {
   min-height: 100vh;
   padding: 140px 9% 90px;
   max-width: 1250px;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
   animation: pageIn 0.35s ease;
 }
 
@@ -111,10 +118,13 @@ nav a.active {
   }
 }
 
-/* HOME */
+/* ================= HOME ================= */
 
 #home {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -124,7 +134,7 @@ nav a.active {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #8b5cff;
-  box-shadow: 0 0 40px rgba(139,92,255,0.5);
+  box-shadow: 0 0 40px rgba(139, 92, 255, 0.5);
   margin-bottom: 30px;
 }
 
@@ -157,19 +167,26 @@ h1 span {
   margin-top: 35px;
   padding: 13px 30px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #8b5cff, #5c35d6);
+
+  background: linear-gradient(
+    135deg,
+    #8b5cff,
+    #5c35d6
+  );
+
   color: white;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(139,92,255,0.3);
+
+  box-shadow: 0 10px 30px rgba(139, 92, 255, 0.3);
   transition: 0.3s;
 }
 
 .button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(139,92,255,0.5);
+  box-shadow: 0 15px 40px rgba(139, 92, 255, 0.5);
 }
 
-/* SECTION */
+/* ================= SECTION TITLE ================= */
 
 .section-title {
   margin-bottom: 45px;
@@ -185,11 +202,11 @@ h1 span {
   margin-top: 5px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 35px;
   transition: 0.4s;
@@ -198,7 +215,12 @@ h1 span {
 .card:hover {
   transform: translateY(-5px);
   border-color: #8b5cff;
-  box-shadow: 0 15px 40px rgba(139,92,255,0.15);
+  box-shadow: 0 15px 40px rgba(139, 92, 255, 0.15);
+}
+
+.card h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
 .card p {
@@ -210,7 +232,7 @@ h1 span {
   color: #8b5cff;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .info {
   display: grid;
@@ -221,13 +243,13 @@ h1 span {
 .info-box {
   padding: 22px;
   border-left: 3px solid #8b5cff;
-  background: rgba(255,255,255,0.035);
+  background: rgba(255, 255, 255, 0.035);
   transition: 0.3s;
 }
 
 .info-box:hover {
   transform: translateX(5px);
-  background: rgba(139,92,255,0.08);
+  background: rgba(139, 92, 255, 0.08);
 }
 
 .info-box strong {
@@ -236,7 +258,7 @@ h1 span {
   margin-bottom: 5px;
 }
 
-/* EDUCATION */
+/* ================= EDUCATION ================= */
 
 .timeline {
   position: relative;
@@ -264,10 +286,13 @@ h1 span {
   position: absolute;
   left: 8px;
   top: 22px;
+
   width: 16px;
   height: 16px;
+
   background: #8b5cff;
   border-radius: 50%;
+
   box-shadow: 0 0 15px #8b5cff;
 }
 
@@ -280,12 +305,25 @@ h1 span {
 .education-school img {
   width: 70px;
   height: 70px;
+
   object-fit: contain;
+
   padding: 7px;
-  background: rgba(255,255,255,0.06);
+
+  background: rgba(255, 255, 255, 0.06);
+
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
   flex-shrink: 0;
+
+  transition: 0.3s;
+}
+
+.timeline-item:hover .education-school img {
+  border-color: #8b5cff;
+  box-shadow: 0 0 20px rgba(139, 92, 255, 0.25);
 }
 
 .education-school h3 {
@@ -297,7 +335,7 @@ h1 span {
   color: #aaa;
 }
 
-/* SOP */
+/* ================= SOP ================= */
 
 .sop-card {
   max-width: 1000px;
@@ -306,6 +344,7 @@ h1 span {
 }
 
 .sop-card h3 {
+  color: #fff;
   font-size: 30px;
   margin-bottom: 25px;
 }
@@ -322,12 +361,15 @@ h1 span {
   margin-top: 35px;
   padding: 25px;
   border-radius: 18px;
+
   background: linear-gradient(
     135deg,
-    rgba(139,92,255,0.15),
-    rgba(0,217,255,0.06)
+    rgba(139, 92, 255, 0.15),
+    rgba(0, 217, 255, 0.06)
   );
-  border: 1px solid rgba(139,92,255,0.35);
+
+  border: 1px solid rgba(139, 92, 255, 0.35);
+
   text-align: center;
 }
 
@@ -341,22 +383,30 @@ h1 span {
 
 .sop-highlight strong {
   font-size: 24px;
-  background: linear-gradient(90deg, #8b5cff, #00d9ff);
+
+  background: linear-gradient(
+    90deg,
+    #8b5cff,
+    #00d9ff
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ACTIVITY */
+/* ================= ACTIVITY ================= */
 
 .activity {
   width: 100%;
   padding: 35px;
+
   background: linear-gradient(
     135deg,
-    rgba(139,92,255,0.12),
-    rgba(0,217,255,0.05)
+    rgba(139, 92, 255, 0.12),
+    rgba(0, 217, 255, 0.05)
   );
-  border: 1px solid rgba(139,92,255,0.3);
+
+  border: 1px solid rgba(139, 92, 255, 0.3);
   border-radius: 25px;
 }
 
@@ -378,17 +428,25 @@ h1 span {
 }
 
 .image-box {
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.25);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 18px;
+
   padding: 15px;
+
   overflow: hidden;
+
   transition: 0.3s;
 }
 
 .image-box:hover {
   border-color: #8b5cff;
-  box-shadow: 0 15px 40px rgba(139,92,255,0.2);
+
+  box-shadow:
+    0 15px 40px rgba(139, 92, 255, 0.2);
+
   transform: translateY(-5px);
 }
 
@@ -402,42 +460,69 @@ h1 span {
 .activity-img,
 .certificate-img {
   display: block;
+
   width: 100%;
+
   height: 400px;
+
   object-fit: contain;
+
   border-radius: 12px;
+
   background: #050507;
+
   cursor: zoom-in;
+
+  transition: 0.3s;
 }
 
-/* UNIVERSITY */
+.activity-img:hover,
+.certificate-img:hover {
+  transform: scale(1.02);
+}
+
+/* ================= UNIVERSITY ================= */
 
 .university-box {
   display: flex;
   align-items: center;
   gap: 25px;
+
   margin-bottom: 25px;
+
   padding: 20px;
+
   border-radius: 18px;
-  background: rgba(255,255,255,0.035);
-  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .university-logo {
   width: 100px;
   height: 100px;
+
   object-fit: contain;
+
   flex-shrink: 0;
+
   padding: 10px;
+
   background: #fff;
+
   border-radius: 18px;
+}
+
+.university-box h3 {
+  margin-bottom: 5px;
 }
 
 .university-box p {
   color: #aaa;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 
 .skills {
   display: grid;
@@ -447,16 +532,23 @@ h1 span {
 
 .skill {
   padding: 30px;
+
   border-radius: 20px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
   transition: 0.3s;
 }
 
 .skill:hover {
   transform: translateY(-8px);
+
   border-color: #8b5cff;
-  box-shadow: 0 15px 40px rgba(139,92,255,0.15);
+
+  box-shadow:
+    0 15px 40px rgba(139, 92, 255, 0.15);
 }
 
 .skill-icon {
@@ -474,19 +566,26 @@ h1 span {
   line-height: 1.7;
 }
 
-/* LIGHTBOX */
+/* ================= LIGHTBOX ================= */
 
 .lightbox {
   display: none;
+
   position: fixed;
+
   z-index: 9999;
+
   left: 0;
   top: 0;
+
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.92);
+
+  background: rgba(0, 0, 0, 0.92);
+
   justify-content: center;
   align-items: center;
+
   padding: 30px;
 }
 
@@ -497,29 +596,50 @@ h1 span {
 .lightbox img {
   max-width: 95%;
   max-height: 90vh;
+
   object-fit: contain;
+
   border-radius: 10px;
+
+  box-shadow:
+    0 0 50px rgba(139, 92, 255, 0.3);
 }
 
 .close-lightbox {
   position: absolute;
+
   top: 20px;
   right: 35px;
+
   font-size: 45px;
+
   color: white;
+
   cursor: pointer;
+
+  line-height: 1;
+
+  transition: 0.3s;
 }
 
-/* FOOTER */
+.close-lightbox:hover {
+  color: #8b5cff;
+}
+
+/* ================= FOOTER ================= */
 
 footer {
   text-align: center;
+
   padding: 40px;
+
   color: #666;
-  border-top: 1px solid rgba(255,255,255,0.08);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
@@ -574,6 +694,7 @@ footer {
   .certificate-img {
     height: auto;
     max-height: 500px;
+    object-fit: contain;
   }
 
   .sop-card p {
@@ -621,5 +742,11 @@ footer {
   .lightbox img {
     max-width: 100%;
     max-height: 85vh;
+  }
+
+  .close-lightbox {
+    top: 15px;
+    right: 20px;
+    font-size: 38px;
   }
 }
