@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ประวัติส่วนตัว | ปกป้อง พงษ์เผ่าพงษ์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Kanit", sans-serif; background: #07070a; color: #fff; min-height: 100vh; }
+    body::before { content: ""; position: fixed; width: 500px; height: 500px; background: #6c3cff; filter: blur(180px); opacity: 0.18; top: -150px; left: -150px; z-index: -1; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(7, 7, 10, 0.82); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
+    .logo { font-size: 21px; font-weight: 600; color: #fff; }
+    nav ul { display: flex; list-style: none; gap: 22px; }
+    nav a { color: #aaa; text-decoration: none; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #8b5cff; }
+    .page { min-height: 100vh; padding: 140px 9% 90px; max-width: 1250px; margin: auto; }
+    .section-title { margin-bottom: 45px; }
+    .section-title small { color: #8b5cff; letter-spacing: 3px; }
+    .section-title h2 { font-size: 45px; margin-top: 5px; }
+    .info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .info-box { padding: 22px; border-left: 3px solid #8b5cff; background: rgba(255,255,255,0.035); transition: 0.3s; }
+    .info-box:hover { transform: translateX(5px); background: rgba(139,92,255,0.08); }
+    .info-box strong { display: block; color: #8b5cff; margin-bottom: 5px; }
+    footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.08); }
+    @media (max-width: 768px) {
+      nav { padding: 14px 5%; }
+      nav ul { gap: 8px; font-size: 10px; flex-wrap: wrap; }
+      .page { padding: 120px 6% 70px; }
+      .info { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">แฟ้มสะสมผลงาน</div>
+    <ul>
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="about.html" class="active">ประวัติ</a></li>
+      <li><a href="preface.html">คำนำ</a></li>
+      <li><a href="sop.html">SOP</a></li>
+      <li><a href="education.html">การศึกษา</a></li>
+      <li><a href="activity.html">กิจกรรม</a></li>
+      <li><a href="future.html">เป้าหมาย</a></li>
+      <li><a href="skills.html">ทักษะ</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="section-title">
+      <small>01 — ABOUT ME</small>
+      <h2>ประวัติส่วนตัว</h2>
+    </div>
+    <div class="info">
+      <div class="info-box"><strong>ชื่อ</strong>นายปกป้อง พงษ์เผ่าพงษ์</div>
+      <div class="info-box"><strong>ชื่อเล่น</strong>ปอ</div>
+      <div class="info-box"><strong>วัน / เดือน / ปีเกิด</strong>2 / 12 / 2551</div>
+      <div class="info-box"><strong>หมู่เลือด</strong>-</div>
+      <div class="info-box"><strong>สัญชาติ</strong>ไทย</div>
+      <div class="info-box"><strong>งานอดิเรก</strong>ดูการ์ตูน • อ่านการ์ตูน • เล่นเกม</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
+  </footer>
+</body>
+</html>
