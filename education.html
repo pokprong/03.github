@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การศึกษา | ปกป้อง พงษ์เผ่าพงษ์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Kanit", sans-serif; background: #07070a; color: #fff; min-height: 100vh; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(7, 7, 10, 0.82); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
+    .logo { font-size: 21px; font-weight: 600; color: #fff; }
+    nav ul { display: flex; list-style: none; gap: 22px; }
+    nav a { color: #aaa; text-decoration: none; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #8b5cff; }
+    .page { min-height: 100vh; padding: 140px 9% 90px; max-width: 1250px; margin: auto; }
+    .section-title { margin-bottom: 45px; }
+    .section-title small { color: #8b5cff; letter-spacing: 3px; }
+    .section-title h2 { font-size: 45px; margin-top: 5px; }
+    .timeline { position: relative; max-width: 900px; }
+    .timeline::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: #8b5cff; }
+    .timeline-item { position: relative; padding-left: 55px; margin-bottom: 45px; }
+    .timeline-item::before { content: ""; position: absolute; left: 8px; top: 22px; width: 16px; height: 16px; background: #8b5cff; border-radius: 50%; box-shadow: 0 0 15px #8b5cff; }
+    .education-school { display: flex; align-items: center; gap: 18px; }
+    .education-school img { width: 70px; height: 70px; object-fit: contain; padding: 7px; background: rgba(255,255,255,0.06); border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; transition: 0.3s; }
+    .education-school h3 { font-size: 24px; margin-bottom: 5px; }
+    .education-school p { color: #aaa; }
+    footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.08); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">แฟ้มสะสมผลงาน</div>
+    <ul>
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="about.html">ประวัติ</a></li>
+      <li><a href="preface.html">คำนำ</a></li>
+      <li><a href="sop.html">SOP</a></li>
+      <li><a href="education.html" class="active">การศึกษา</a></li>
+      <li><a href="activity.html">กิจกรรม</a></li>
+      <li><a href="future.html">เป้าหมาย</a></li>
+      <li><a href="skills.html">ทักษะ</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="section-title">
+      <small>04 — EDUCATION</small>
+      <h2>ประวัติการศึกษา</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="education-school">
+          <img src="bankaodin.png" alt="โลโก้โรงเรียนบ้านเขาดิน">
+          <div><h3>ระดับอนุบาล</h3><p>โรงเรียนบ้านเขาดิน</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="education-school">
+          <img src="bankaodin.png" alt="โลโก้โรงเรียนบ้านเขาดิน">
+          <div><h3>ระดับประถมศึกษา</h3><p>โรงเรียนบ้านเขาดิน</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="education-school">
+          <img src="banbung.png" alt="โลโก้โรงเรียนบ้านบึง">
+          <div><h3>ระดับมัธยมศึกษาตอนต้น</h3><p>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="education-school">
+          <img src="banbung.png" alt="โลโก้โรงเรียนบ้านบึง">
+          <div><h3>ระดับมัธยมศึกษาตอนปลาย</h3><p>โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
+  </footer>
+</body>
+</html>
