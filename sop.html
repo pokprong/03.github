@@ -7,27 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: "Kanit", sans-serif; background: #07070a; color: #fff; min-height: 100vh; }
-    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(7, 7, 10, 0.82); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
-    .logo { font-size: 21px; font-weight: 600; color: #fff; }
-    nav ul { display: flex; list-style: none; gap: 22px; }
-    nav a { color: #aaa; text-decoration: none; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #8b5cff; }
-    .page { min-height: 100vh; padding: 140px 9% 90px; max-width: 1250px; margin: auto; }
-    .section-title { margin-bottom: 45px; }
-    .section-title small { color: #8b5cff; letter-spacing: 3px; }
-    .section-title h2 { font-size: 45px; margin-top: 5px; }
-    .sop-card { max-width: 1000px; margin: 0 auto; width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 35px; }
-    .sop-card h3 { color: #fff; font-size: 30px; margin-bottom: 25px; }
-    .sop-card p { color: #bbb; font-size: 17px; line-height: 2.1; margin-bottom: 22px; text-align: justify; }
-    .purple { color: #8b5cff; }
-    .sop-highlight { margin-top: 35px; padding: 25px; border-radius: 18px; background: linear-gradient(135deg, rgba(139,92,255,0.15), rgba(0,217,255,0.06)); border: 1px solid rgba(139,92,255,0.35); text-align: center; }
-    .sop-highlight span { display: block; color: #8b5cff; font-size: 13px; letter-spacing: 4px; margin-bottom: 8px; }
-    .sop-highlight strong { font-size: 24px; background: linear-gradient(90deg, #8b5cff, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.08); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
@@ -44,7 +24,7 @@
     </ul>
   </nav>
 
-  <section class="page">
+  <main class="page">
     <div class="section-title">
       <small>03 — STATEMENT OF PURPOSE</small>
       <h2>SOP</h2>
@@ -61,10 +41,11 @@
         <strong>Computer • Technology • Innovation</strong>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
