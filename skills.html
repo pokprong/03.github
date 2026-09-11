@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ทักษะ | ปกป้อง พงษ์เผ่าพงษ์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Kanit", sans-serif; background: #07070a; color: #fff; min-height: 100vh; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(7, 7, 10, 0.82); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
+    .logo { font-size: 21px; font-weight: 600; color: #fff; }
+    nav ul { display: flex; list-style: none; gap: 22px; }
+    nav a { color: #aaa; text-decoration: none; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #8b5cff; }
+    .page { min-height: 100vh; padding: 140px 9% 90px; max-width: 1250px; margin: auto; }
+    .section-title { margin-bottom: 45px; }
+    .section-title small { color: #8b5cff; letter-spacing: 3px; }
+    .section-title h2 { font-size: 45px; margin-top: 5px; }
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .skill { padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: 0.3s; }
+    .skill:hover { transform: translateY(-8px); border-color: #8b5cff; box-shadow: 0 15px 40px rgba(139,92,255,0.15); }
+    .skill-icon { font-size: 40px; margin-bottom: 15px; }
+    .skill h3 { margin-bottom: 10px; font-size: 24px; }
+    .skill p { color: #aaa; line-height: 1.7; }
+    footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.08); }
+    @media (max-width: 768px) {
+      .skills { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">แฟ้มสะสมผลงาน</div>
+    <ul>
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="about.html">ประวัติ</a></li>
+      <li><a href="preface.html">คำนำ</a></li>
+      <li><a href="sop.html">SOP</a></li>
+      <li><a href="education.html">การศึกษา</a></li>
+      <li><a href="activity.html">กิจกรรม</a></li>
+      <li><a href="future.html">เป้าหมาย</a></li>
+      <li><a href="skills.html" class="active">ทักษะ</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="section-title">
+      <small>07 — SKILLS</small>
+      <h2>ทักษะ</h2>
+    </div>
+    <div class="skills">
+      <div class="skill">
+        <div class="skill-icon">🤝</div>
+        <h3>การทำงานเป็นทีม</h3>
+        <p>สามารถทำงานร่วมกับผู้อื่น รับฟังความคิดเห็น และช่วยกันวางแผนเพื่อให้การทำงานบรรลุเป้าหมาย</p>
+      </div>
+      <div class="skill">
+        <div class="skill-icon">🎤</div>
+        <h3>การกล้าแสดงออก</h3>
+        <p>มีความกล้าที่จะแสดงความคิดเห็น นำเสนอความคิด และมีส่วนร่วมในกิจกรรมต่าง ๆ</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
+  </footer>
+</body>
+</html>
