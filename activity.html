@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>กิจกรรม | ปกป้อง พงษ์เผ่าพงษ์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Kanit", sans-serif; background: #07070a; color: #fff; min-height: 100vh; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; background: rgba(7, 7, 10, 0.82); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 1000; }
+    .logo { font-size: 21px; font-weight: 600; color: #fff; }
+    nav ul { display: flex; list-style: none; gap: 22px; }
+    nav a { color: #aaa; text-decoration: none; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #8b5cff; }
+    .page { min-height: 100vh; padding: 140px 9% 90px; max-width: 1250px; margin: auto; }
+    .section-title { margin-bottom: 45px; }
+    .section-title small { color: #8b5cff; letter-spacing: 3px; }
+    .section-title h2 { font-size: 45px; margin-top: 5px; }
+    .activity { width: 100%; padding: 35px; background: linear-gradient(135deg, rgba(139,92,255,0.12), rgba(0,217,255,0.05)); border: 1px solid rgba(139,92,255,0.3); border-radius: 25px; }
+    .activity h3 { font-size: 30px; margin-bottom: 15px; }
+    .activity p { color: #bbb; line-height: 2; }
+    .activity-images { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 30px; }
+    .image-box { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 15px; overflow: hidden; transition: 0.3s; }
+    .image-box h4 { color: #8b5cff; font-size: 18px; margin-bottom: 12px; text-align: center; }
+    .activity-img, .certificate-img { display: block; width: 100%; height: 400px; object-fit: contain; border-radius: 12px; background: #050507; cursor: zoom-in; transition: 0.3s; }
+    .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); justify-content: center; align-items: center; padding: 30px; }
+    .lightbox.show { display: flex; }
+    .lightbox img { max-width: 95%; max-height: 90vh; object-fit: contain; border-radius: 10px; box-shadow: 0 0 50px rgba(139,92,255,0.3); }
+    .close-lightbox { position: absolute; top: 20px; right: 35px; font-size: 45px; color: white; cursor: pointer; }
+    footer { text-align: center; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.08); }
+    @media (max-width: 768px) {
+      .activity-images { grid-template-columns: 1fr; }
+      .activity-img, .certificate-img { height: auto; max-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">แฟ้มสะสมผลงาน</div>
+    <ul>
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="about.html">ประวัติ</a></li>
+      <li><a href="preface.html">คำนำ</a></li>
+      <li><a href="sop.html">SOP</a></li>
+      <li><a href="education.html">การศึกษา</a></li>
+      <li><a href="activity.html" class="active">กิจกรรม</a></li>
+      <li><a href="future.html">เป้าหมาย</a></li>
+      <li><a href="skills.html">ทักษะ</a></li>
+    </ul>
+  </nav>
+
+  <section class="page">
+    <div class="section-title">
+      <small>05 — ACTIVITY</small>
+      <h2>กิจกรรมที่เข้าร่วม</h2>
+    </div>
+    <div class="activity">
+      <div class="activity-images">
+        <div class="image-box">
+          <h4>รูปกิจกรรม</h4>
+          <img src="activity.jpeg" alt="รูปกิจกรรมค่ายพัฒนานวัตกรรมและเทคโนโลยี" class="activity-img" onclick="openLightbox(this.src)">
+        </div>
+        <div class="image-box">
+          <h4>เกียรติบัตร</h4>
+          <img src="buud.jpg" alt="เกียรติบัตรค่ายพัฒนานวัตกรรมและเทคโนโลยี" class="certificate-img" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+      <h3>ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5</h3>
+      <p>ณ โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”</p>
+      <br>
+      <p>การเข้าร่วมโครงการค่ายพัฒนานวัตกรรมและเทคโนโลยี เป็นประสบการณ์ที่ช่วยเปิดโอกาสให้ข้าพเจ้าได้เรียนรู้ เกี่ยวกับนวัตกรรมและเทคโนโลยี รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น การแลกเปลี่ยนความคิดเห็น และการแก้ไขปัญหาอย่างเป็นระบบ</p>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="รูปภาพขนาดใหญ่" onclick="event.stopPropagation()">
+  </div>
+
+  <footer>
+    <p>© 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO</p>
+  </footer>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  </script>
+</body>
+</html>
