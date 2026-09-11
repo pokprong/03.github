@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>กิจกรรม | ปกป้อง พงษ์เผ่าพงษ์</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
@@ -17,7 +21,10 @@
 <body>
 
 <nav>
-  <div class="logo">แฟ้มสะสมผลงาน</div>
+
+  <div class="logo">
+    แฟ้มสะสมผลงาน
+  </div>
 
   <ul>
     <li><a href="index.html">หน้าแรก</a></li>
@@ -29,13 +36,21 @@
     <li><a href="future.html">เป้าหมาย</a></li>
     <li><a href="skills.html">ทักษะ</a></li>
   </ul>
+
 </nav>
 
-<section class="page active">
+<section class="page">
 
   <div class="section-title">
-    <small>05 — ACTIVITY</small>
-    <h2>กิจกรรมที่เข้าร่วม</h2>
+
+    <small>
+      05 — ACTIVITY
+    </small>
+
+    <h2>
+      กิจกรรมที่เข้าร่วม
+    </h2>
+
   </div>
 
   <div class="activity">
@@ -43,7 +58,10 @@
     <div class="activity-images">
 
       <div class="image-box">
-        <h4>รูปกิจกรรม</h4>
+
+        <h4>
+          รูปกิจกรรม
+        </h4>
 
         <img
           src="activity.jpeg"
@@ -51,10 +69,14 @@
           class="activity-img"
           onclick="openLightbox(this.src)"
         >
+
       </div>
 
       <div class="image-box">
-        <h4>เกียรติบัตร</h4>
+
+        <h4>
+          เกียรติบัตร
+        </h4>
 
         <img
           src="buud.jpg"
@@ -62,11 +84,14 @@
           class="certificate-img"
           onclick="openLightbox(this.src)"
         >
+
       </div>
 
     </div>
 
-    <h3>ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5</h3>
+    <h3>
+      ค่ายพัฒนานวัตกรรมและเทคโนโลยี ครั้งที่ 5
+    </h3>
 
     <p>
       ณ โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
@@ -85,8 +110,26 @@
 
 </section>
 
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="close-lightbox">×</span>
+<footer>
+  <p>
+    © 2026 ปกป้อง พงษ์เผ่าพงษ์ — PORTFOLIO
+  </p>
+</footer>
+
+<!-- LIGHTBOX -->
+
+<div
+  id="lightbox"
+  class="lightbox"
+  onclick="closeLightbox()"
+>
+
+  <span
+    class="close-lightbox"
+    onclick="closeLightbox()"
+  >
+    ×
+  </span>
 
   <img
     id="lightbox-img"
@@ -94,9 +137,45 @@
     alt="รูปภาพขนาดใหญ่"
     onclick="event.stopPropagation()"
   >
+
 </div>
 
-<script src="script.js"></script>
+<script>
+
+function openLightbox(src) {
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  const image =
+    document.getElementById("lightbox-img");
+
+  image.src = src;
+
+  lightbox.classList.add("show");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+
+  const lightbox =
+    document.getElementById("lightbox");
+
+  lightbox.classList.remove("show");
+
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+
+  if (e.key === "Escape") {
+    closeLightbox();
+  }
+
+});
+
+</script>
 
 </body>
 </html>
