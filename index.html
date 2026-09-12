@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>หน้าแรก | ปกป้อง พงษ์เผ่าพงษ์</title>
+  <title>ประวัติ | ปกป้อง พงษ์เผ่าพงษ์</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Kanit', sans-serif; }
     body { background-color: #0d0e15; color: #e2e8f0; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
-    
-    /* Navbar Styles */
     nav { background: rgba(13, 14, 21, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; }
-    .logo { font-size: 1.25rem; font-weight: 600; color: #a855f7; text-transform: uppercase; letter-spacing: 1px; }
+    .logo { font-size: 1.25rem; font-weight: 600; color: #a855f7; text-transform: uppercase; }
     nav ul { display: flex; list-style: none; gap: 1rem; flex-wrap: wrap; }
     nav a { color: #94a3b8; text-decoration: none; padding: 0.5rem 0.8rem; border-radius: 6px; font-size: 0.9rem; transition: all 0.3s; }
     nav a:hover, nav a.active { color: #fff; background: #6b21a8; }
 
-    /* Main Container */
-    .container { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; flex: 1; display: flex; align-items: center; }
-    .hero { text-align: center; width: 100%; background: #161823; padding: 4rem 2rem; border-radius: 16px; border: 1px solid #242736; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .hero h1 { font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.2rem; color: #a855f7; margin-bottom: 1.5rem; }
-    .hero .desc { color: #94a3b8; max-width: 600px; margin: 0 auto 2rem; font-weight: 300; }
-    .btn { display: inline-block; background: #9333ea; color: #fff; text-decoration: none; padding: 0.8rem 2rem; border-radius: 8px; font-weight: 600; transition: background 0.3s; }
-    .btn:hover { background: #7e22ce; }
+    .container { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; flex: 1; }
+    .card { background: #161823; padding: 2.5rem; border-radius: 16px; border: 1px solid #242736; }
+    .section-title { margin-bottom: 2rem; border-bottom: 1px solid #242736; padding-bottom: 1rem; }
+    .section-title small { color: #a855f7; font-weight: 600; letter-spacing: 1px; }
+    .section-title h2 { color: #fff; font-size: 1.8rem; }
+    
+    /* ส่วนรูปภาพและเนื้อหาประวัติ */
+    .about-wrapper { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .profile-img { width: 220px; height: 280px; object-fit: cover; border-radius: 12px; border: 2px solid #a855f7; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2); }
+    .info-list { flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .info-item { background: #0d0e15; padding: 1rem; border-radius: 10px; border: 1px solid #1e293b; }
+    .info-item strong { color: #a855f7; display: block; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .info-item span { color: #fff; font-size: 1rem; }
 
-    /* Footer */
     footer { text-align: center; padding: 1.5rem; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.85rem; margin-top: auto; }
   </style>
 </head>
@@ -34,8 +36,8 @@
   <nav>
     <div class="logo">PORTFOLIO</div>
     <ul>
-      <li><a href="index.html" class="active">หน้าแรก</a></li>
-      <li><a href="about.html">ประวัติ</a></li>
+      <li><a href="index.html">หน้าแรก</a></li>
+      <li><a href="about.html" class="active">ประวัติ</a></li>
       <li><a href="preface.html">คำนำ</a></li>
       <li><a href="sop.html">SOP</a></li>
       <li><a href="education.html">การศึกษา</a></li>
@@ -46,11 +48,24 @@
   </nav>
 
   <div class="container">
-    <div class="hero">
-      <h1>ยินดีต้อนรับสู่ แฟ้มสะสมผลงาน</h1>
-      <p>ปกป้อง พงษ์เผ่าพงษ์ (ปอ)</p>
-      <p class="desc">เว็บไซต์แนะนำตัว ผลงาน กิจกรรม และเป้าหมายการศึกษา พัฒนาด้วยความตั้งใจเพื่อนำเสนอตัวตนและทักษะความสามารถ</p>
-      <a href="about.html" class="btn">สำรวจประวัติส่วนตัว</a>
+    <div class="card">
+      <div class="section-title">
+        <small>01 — ABOUT ME</small>
+        <h2>ประวัติส่วนตัว</h2>
+      </div>
+
+      <div class="about-wrapper">
+        <!-- เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปโปรไฟล์ของคุณ -->
+        <img src="profile.jpg" alt="รูปโปรไฟล์" class="profile-img">
+
+        <div class="info-list">
+          <div class="info-item"><strong>ชื่อ-นามสกุล</strong><span>นายปกป้อง พงษ์เผ่าพงษ์</span></div>
+          <div class="info-item"><strong>ชื่อเล่น</strong><span>ปอ</span></div>
+          <div class="info-item"><strong>วันเกิด</strong><span>2 ธันวาคม 2551</span></div>
+          <div class="info-item"><strong>สัญชาติ</strong><span>ไทย</span></div>
+          <div class="info-item"><strong>งานอดิเรก</strong><span>ดูการ์ตูน • อ่านการ์ตูน • เล่นเกม</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
